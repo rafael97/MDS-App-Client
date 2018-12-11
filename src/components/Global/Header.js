@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import logo from './images/logo.svg';
+import logo from './images/logo_utb.png';
 import './css/Header.css';
-//import 'emerald-ui/lib/styles-ceb.css';
+import {Row,Col, Grid}from 'react-bootstrap'
 class Header extends Component {
   render() {
     return (
-      <div className="Header">
-        <div className="Logo">
-          <img src={logo} alt="logo" />
-        </div>
-        <div className="col-lg-8 ">
-        <h1>MDS App</h1>
-        </div>
-      </div>
+
+      <Grid className="Header" >
+        <Row>
+          <Col xs={5} md={5} >
+            <div className="Logo">
+              <img src={logo} alt="logo" />
+            </div>
+          </Col>
+          <Col xs={7} md={7} >
+            <div className="Header-title">
+              <h1>MDS App</h1>
+            </div>
+          </Col>
+        </Row>
+      </Grid>
+
     );
   }
 }

@@ -3,6 +3,12 @@
  margin:  0 auto;
  margin-top:  10px ;
  width: 100%;
+ text-align: center;
  color: white; 
+ position: fixed;
+ height: 50px;
+ bottom: 0px;
+ left: 0px;
+ right: 0px;
 }
 

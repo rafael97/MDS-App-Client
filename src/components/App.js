@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import './Global/css/App.css'
 import Header from './Global/Header';
 import Content from './Global/Content';
 import Footer from './Global/Footer';
@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Content body = {children}/>
+        <Content className = "Content"  body = {children}/>
         <Footer />
       </div>
     );
