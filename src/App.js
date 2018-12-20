@@ -12,6 +12,11 @@ const LoadableCategories = Loadable({
   loading: Loading
 });
 
+const LoadableCourses = Loadable({
+  loader: () => import('./components/Pages/Courses'),
+  loading: Loading
+});
+
 const LoadableAbout = Loadable({
   loader: () => import('./components/Pages/About'),
   loading: Loading
@@ -29,6 +34,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={LoadableCategories} />
+          <Route exact path="/course" component={LoadableCourses} />
           <Route exact path="/about" component={LoadableAbout} />
           <Route exact path="/404" component={Loadable404} />
         </Switch>
