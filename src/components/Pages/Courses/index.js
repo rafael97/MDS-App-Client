@@ -21,9 +21,12 @@ class Courses extends Component {
     }
     
     async componentDidMount() {
-        const {CategoryId} = this.props.location.state
+        let CategoryId = 0
+        if (this.props.location.state) {
+            CategoryId = this.props.location.state.CategoryId;
+        }
         console.log('CategoryId',CategoryId);
-        const response = await request.get(`http://ec2-54-88-64-36.compute-1.amazonaws.com:3000/v1/category/${CategoryId}/childs`)
+        const response = await request.get(`http://ec2-54-88-64-36.compute-1.amazonaws.com:3000/v1/category/${CategoryId}/childs?SetCourses=true`)
         this.setState({ courses: response.data, coursesFilter: response.data , loadingResources:false})
     }
 

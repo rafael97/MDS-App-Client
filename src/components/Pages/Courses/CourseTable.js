@@ -6,7 +6,6 @@ import Table from 'emerald-ui/lib/Table';
 
 
 const renderCourse = (courses) => {
-    console.log('renderCourse',courses);
     return courses.map(course => (
         <ExpansionTableRow useCheckbox={false} key={`course-${course.id}`}>
             <ExpansionTableRow.Summary>
