@@ -1,15 +1,15 @@
 import React from 'react'
-import ExpansionTableRowGroup from 'emerald-ui/lib/ExpansionTableRowGroup';
-import ExpansionTableRow from 'emerald-ui/lib/ExpansionTableRow';
-import TableHeader from 'emerald-ui/lib/TableHeader';
-import Table from 'emerald-ui/lib/Table';
+import {Table, Button, TableHeader, ExpansionTableRow, ExpansionTableRowGroup }  from 'emerald-ui/lib';
+import { LinkContainer } from 'react-router-bootstrap'
 
 
 const renderCourse = (courses) => {
+
+     
     return courses.map(course => (
         <ExpansionTableRow useCheckbox={false} key={`course-${course.id}`}>
             <ExpansionTableRow.Summary>
-                <td><b>{course.name}</b></td>
+                <td><b>{course.shortname}</b></td>
                 <td>&#x25BC;</td>
             </ExpansionTableRow.Summary>
             <ExpansionTableRow.Content>
@@ -27,22 +27,16 @@ const renderCourse = (courses) => {
                                 <td><b>{String(course.id) }</b></td>
                             </tr>
                             <tr>
-                                <td><b>Name</b></td>
-                                <td><b>{String(course.name).toUpperCase()}</b></td>
-                            </tr>
-
-                            <tr>
-                                <td><b>Description</b></td>
-                                <td>{course.description}</td>
+                                <td><b>Fullname</b></td>
+                                <td>{course.fullname}</td>
                             </tr>
                             <tr>
-                                <td><b>Number of child Course</b></td>
-                                <td>{course.categories.length}</td>
+                                <td><b>Detail</b></td>
+                                <td>  <LinkContainer to={{ pathname: "/Stats", state: { CourseId: String(course.id)} }}>
+                                <Button color="info"> info </Button>
+                                </LinkContainer></td>
                             </tr>
-                            <tr>
-                                <td><b>Child Course names</b></td>
-                                <td>{course.categories.map(childcourse => childcourse.name).join(', ')}</td>
-                            </tr>
+                           
                         </tbody>
                     </Table>
                 </div>

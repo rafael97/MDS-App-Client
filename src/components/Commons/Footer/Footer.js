@@ -6,11 +6,11 @@ import './Footer.css';
 class Footer extends Component {
   render() {
     return (
-      <Grid fluid className="Footer" >
+      <Grid  className="Footer" >
         <Row>
-          <div >
+          
             <p> footer </p>
-          </div>
+          
         </Row>
       </Grid>
     );

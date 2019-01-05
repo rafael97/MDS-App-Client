@@ -27,10 +27,11 @@ class Courses extends Component {
         let CategoryId = 0
         let coursesResponse = []
         if (this.props.location.state) {
-            CategoryId = this.props.location.state.CategoryId;
+            CourseId = this.props.location.state.CourseId;
         }
         console.log('CategoryId',CategoryId);
-        const response = await request.get(`http://ec2-54-88-64-36.compute-1.amazonaws.com:3000/v1/category/${CategoryId}?SetCourses=true`)
+        const response = await request.get(`http://ec2-54-88-64-36.compute-1.amazonaws.com:3000/v1/course/${CourseId}`)
+           console.log('response.data',response.data);
            
     if (!Array.isArray(response.data)) {
         coursesResponse = response.data.courses;
@@ -50,8 +51,7 @@ class Courses extends Component {
         return (
             <Grid >
                 <Header course ={this.state.categoryDetail} />
-                <SearchForm className="course-search" inputId="query" clearable onSubmit={e => e.preventDefault()} onChange={this.handlerFilterCourses}/>
-                <CourseTable course ={this.state.coursesFilter} />
+                {/* <CourseTable course ={this.state.coursesFilter} /> */}
             </Grid>
         );
     }
