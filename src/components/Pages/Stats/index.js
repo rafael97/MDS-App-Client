@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import request from '../../../utils/requets';
-import  SearchForm  from 'emerald-ui/lib/SearchForm';
 import Grid from 'react-bootstrap/lib/Grid'
-import CourseTable from './CourseTable'
 import Header from './Header'
 
 import './css/Courses.css'
@@ -24,12 +22,12 @@ class Courses extends Component {
     }
     
     async componentDidMount() {
-        let CategoryId = 0
+        let CourseId = 0
         let coursesResponse = []
         if (this.props.location.state) {
             CourseId = this.props.location.state.CourseId;
         }
-        console.log('CategoryId',CategoryId);
+        console.log('CourseId',CourseId);
         const response = await request.get(`http://ec2-54-88-64-36.compute-1.amazonaws.com:3000/v1/course/${CourseId}`)
            console.log('response.data',response.data);
            
