@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import request from '../../../utils/requets';
 import Grid from 'react-bootstrap/lib/Grid'
 import Header from './Header'
-
+import Charts from './Chars'
 import './css/Courses.css'
 
 
@@ -13,7 +13,7 @@ class Courses extends Component {
         this.state = { 
             courses: [],
             coursesFilter: [],
-            categoryDetail: [],
+            CourseDetail: [],
             loadingResources: true
         }
 
@@ -29,13 +29,13 @@ class Courses extends Component {
         }
         console.log('CourseId',CourseId);
         const response = await request.get(`http://ec2-54-88-64-36.compute-1.amazonaws.com:3000/v1/course/${CourseId}`)
-           console.log('response.data',response.data);
+        //    console.log('response.data',response.data);
            
     if (!Array.isArray(response.data)) {
         coursesResponse = response.data.courses;
     }
        
-        this.setState({ courses: coursesResponse, coursesFilter: coursesResponse ,categoryDetail : response.data, loadingResources:false})
+        this.setState({ courses: coursesResponse, coursesFilter: coursesResponse ,CourseDetail : response.data, loadingResources:false})
     }
 
     handlerFilterCourses(event){
@@ -48,8 +48,8 @@ class Courses extends Component {
     render() {
         return (
             <Grid >
-                <Header course ={this.state.categoryDetail} />
-                {/* <CourseTable course ={this.state.coursesFilter} /> */}
+                <Header course ={this.state.CourseDetail} />
+                <Charts course ={this.state.CourseDetail} />
             </Grid>
         );
     }

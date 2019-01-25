@@ -1,64 +1,46 @@
-import React from 'react'
-import {Table, Button, TableHeader, ExpansionTableRow, ExpansionTableRowGroup }  from 'emerald-ui/lib';
-import { LinkContainer } from 'react-router-bootstrap'
+import React from 'react';
+import {HorizontalBar} from 'react-chartjs-2';
 
 
-const renderCourse = (courses) => {
 
-     
-    return courses.map(course => (
-        <ExpansionTableRow useCheckbox={false} key={`course-${course.id}`}>
-            <ExpansionTableRow.Summary>
-                <td><b>{course.shortname}</b></td>
-                <td>&#x25BC;</td>
-            </ExpansionTableRow.Summary>
-            <ExpansionTableRow.Content>
-                <div>
-                    <Table condensed>
-                        <thead>
-                            <tr>
-                                <th>Attribute</th>
-                                <th>Detail</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>ID</b></td>
-                                <td><b>{String(course.id) }</b></td>
-                            </tr>
-                            <tr>
-                                <td><b>Fullname</b></td>
-                                <td>{course.fullname}</td>
-                            </tr>
-                            <tr>
-                                <td><b>Detail</b></td>
-                                <td>  <LinkContainer to={{ pathname: "/", state: { CourseId: String(course.id)} }}>
-                                <Button color="info"> info </Button>
-                                </LinkContainer></td>
-                            </tr>
-                           
-                        </tbody>
-                    </Table>
-                </div>
-            </ExpansionTableRow.Content>
-        </ExpansionTableRow>
-    ))
+
+const data = (organized)=>{ 
+  let valuesX = [];
+  let valuesY = [];
+  console.log('organized',organized);
+  for (var key in organized) {
+    valuesY.push(key);
+    valuesX.push(organized[key].length)
+  }
+    
+  return{
+  labels: valuesY,
+  datasets: [
+    {
+      label: 'Resumen de Componentes',
+      backgroundColor: 'rgba(255,99,132,0.2)',
+      borderColor: 'rgba(255,99,132,1)',
+      borderWidth: 1,
+      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+      hoverBorderColor: 'rgba(255,99,132,1)',
+      data:valuesX
+    }
+  ]
+};
 }
 
-const CourseTable = (props) => {
-    console.log('course',props.course);
+
+
+
+const ChartModule = (props) => {
+    console.log('stats',props.course);
     return (
-        <div>
-            <ExpansionTableRowGroup id="g1">
-                <TableHeader useCheckbox={false}>
-                    <th>Name</th>
-                    <th>Details</th>
-                </TableHeader>
-                {renderCourse(props.course)}
-            </ExpansionTableRowGroup>
-        </div>
-    )
+      <div>
+        <HorizontalBar data={data(props.course.organized)} />
+      </div>
+    );
+    
 }
 
 
-export default CourseTable;
+export default ChartModule;
