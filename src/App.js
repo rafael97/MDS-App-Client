@@ -4,7 +4,7 @@ import Route from 'react-router-dom/Route';
 import Loadable from 'react-loadable';
 import Loading from './components/Commons/Loading';
 import Header from './components/Commons/Header';
-import Footer from './components/Commons/Footer';
+
 import './App.css'
 
 const LoadableCategories = Loadable({
@@ -44,7 +44,7 @@ class App extends Component {
           <Route exact path="/stats" component={LoadableStats} />
           <Route exact path="/404" component={Loadable404} />
         </Switch>
-        <Footer />
+  
       </div>
     );
   }

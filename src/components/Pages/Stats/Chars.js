@@ -12,7 +12,7 @@ const data = (organized)=>{
     valuesY.push(key);
     valuesX.push(organized[key].length)
   }
-    
+     
   return{
   labels: valuesY,
   datasets: [
