@@ -30,7 +30,7 @@ class Courses extends Component {
             CategoryId = this.props.location.state.CategoryId;
         }
         console.log('CategoryId',CategoryId);
-        const response = await request.get(`http://ec2-54-88-64-36.compute-1.amazonaws.com:3000/v1/category/${CategoryId}?SetCourses=true`)
+        const response = await request.get(`http://ec2-54-90-77-203.compute-1.amazonaws.com/v1/category/${CategoryId}?SetCourses=true`)
            
     if (!Array.isArray(response.data)) {
         coursesResponse = response.data.courses;
