@@ -20,7 +20,7 @@ class Categories extends Component {
     }
 
     async componentDidMount() {
-        const response = await request.get('http://ec2-54-90-77-203.compute-1.amazonaws.com/v1/category/0/childs')
+        const response = await request.get('http://192.207.60.187:8000/v1/category/0/childs')
         this.setState({ categories: response.data, categoriesFilter: response.data , loadingResources:false})
     }
 
