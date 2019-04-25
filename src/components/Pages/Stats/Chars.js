@@ -7,7 +7,6 @@ import {HorizontalBar} from 'react-chartjs-2';
 const data = (organized)=>{ 
   let valuesX = [];
   let valuesY = [];
-  console.log('organized',organized);
   for (var key in organized) {
     valuesY.push(key);
     valuesX.push(organized[key].length)
@@ -33,7 +32,7 @@ const data = (organized)=>{
 
 
 const ChartModule = (props) => {
-    console.log('stats',props.course);
+
     return (
       <div>
         <HorizontalBar data={data(props.course.organized)} />

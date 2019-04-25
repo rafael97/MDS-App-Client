@@ -27,9 +27,9 @@ class Courses extends Component {
         if (this.props.location.state) {
             CourseId = this.props.location.state.CourseId;
         }
-        console.log('CourseId',CourseId);
+
         const response = await request.get(`http://192.207.60.187:8000/v1/course/${CourseId}`)
-        //    console.log('response.data',response.data);
+
            
     if (!Array.isArray(response.data)) {
         coursesResponse = response.data.courses;

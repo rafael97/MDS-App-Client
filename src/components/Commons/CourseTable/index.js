@@ -46,7 +46,7 @@ const renderCourse = (courses) => {
 }
 
 const CourseTable = (props) => {
-    console.log('course',props.course);
+    const { courses } = props
     return (
         <div>
             <ExpansionTableRowGroup id="g1">
@@ -54,7 +54,7 @@ const CourseTable = (props) => {
                     <th>Name</th>
                     <th>Details</th>
                 </TableHeader>
-                {renderCourse(props.course)}
+                {renderCourse(courses)}
             </ExpansionTableRowGroup>
         </div>
     )

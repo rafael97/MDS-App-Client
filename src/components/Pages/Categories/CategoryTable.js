@@ -1,10 +1,7 @@
 import React from 'react'
-import {Table, Button, TableHeader, ExpansionTableRow, ExpansionTableRowGroup }  from 'emerald-ui/lib';
-import { LinkContainer } from 'react-router-bootstrap'
+import { Table, Button, TableHeader, ExpansionTableRow, ExpansionTableRowGroup } from 'emerald-ui/lib';
 
-
-
-const renderCategories = (categories) => {
+const renderCategories = (categories, updateHandler) => {
     return categories.map(category => (
         <ExpansionTableRow useCheckbox={false} key={`category-${category.id}`}>
             <ExpansionTableRow.Summary>
@@ -23,7 +20,7 @@ const renderCategories = (categories) => {
                         <tbody>
                             <tr>
                                 <td><b>ID</b></td>
-                                <td><b>{String(category.id) }</b></td>
+                                <td><b>{String(category.id)}</b></td>
                             </tr>
                             <tr>
                                 <td><b>Name</b></td>
@@ -36,17 +33,17 @@ const renderCategories = (categories) => {
                             </tr>
                             <tr>
                                 <td><b>Number of child categories</b></td>
-                                <td>{category.categories.length}</td>
+                                <td>{category.categories ? category.categories.length : 0}</td>
                             </tr>
                             <tr>
                                 <td><b>Child categories names</b></td>
-                                <td>{category.categories.map(childCategory => childCategory.name).join(', ')}</td>
+                                <td>{category.categories ? category.categories.map(childCategory => childCategory.name).join(', ') : ''}</td>
                             </tr>
                             <tr>
                                 <td><b>Detail</b></td>
-                                <td>  <LinkContainer to={{ pathname: "/course", state: { CategoryId: String(category.id)} }}>
-                                <Button color="info"> info </Button>
-                                </LinkContainer></td>
+                                <td>
+                                    <Button color="info" onClick={() => updateHandler(category.id)}> info </Button>
+                                </td>
                             </tr>
                         </tbody>
                     </Table>
@@ -57,6 +54,7 @@ const renderCategories = (categories) => {
 }
 
 const CategoryTable = (props) => {
+    const { categories, updateHandler } = props
     return (
         <div>
             <ExpansionTableRowGroup id="g1">
@@ -64,7 +62,7 @@ const CategoryTable = (props) => {
                     <th>Name</th>
                     <th>Details</th>
                 </TableHeader>
-                {renderCategories(props.categories)}
+                {renderCategories(categories, updateHandler)}
             </ExpansionTableRowGroup>
         </div>
     )

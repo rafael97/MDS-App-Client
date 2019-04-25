@@ -1,4 +1,23 @@
-.category-search{
-  margin-top: 20px ;
-  margin-bottom: 50px
+.button-back{
+  margin-top: 2%;
+}
+
+.category-view{
+  margin-bottom: 5%;
+}
+
+.category-search {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.course-search {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.Loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
