@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import request from '../../../utils/requets';
 import Grid from 'react-bootstrap/lib/Grid'
 import Header from './Header'
+import Detail from './Detail'
 import Charts from './Chars'
 import './css/Courses.css'
 
@@ -49,6 +50,7 @@ class Courses extends Component {
         return (
             <Grid >
                 <Header course ={this.state.CourseDetail} />
+                <Detail course ={this.state.CourseDetail} />
                 <Charts course ={this.state.CourseDetail} />
             </Grid>
         );
