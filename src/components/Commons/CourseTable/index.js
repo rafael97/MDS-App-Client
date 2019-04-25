@@ -32,7 +32,7 @@ const renderCourse = (courses) => {
                             </tr>
                             <tr>
                                 <td><b>Detail</b></td>
-                                <td>  <LinkContainer to={{ pathname: "/Stats", state: { CourseId: String(course.id)} }}>
+                                <td>  <LinkContainer to={{ pathname: "/course", state: { CourseId: String(course.id)} }}>
                                 <Button color="info"> info </Button>
                                 </LinkContainer></td>
                             </tr>

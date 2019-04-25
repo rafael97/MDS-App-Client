@@ -27,10 +27,6 @@ const Loadable404  = Loadable({
   loading: Loading
 });
 
-const LoadableStats  = Loadable({
-  loader: () => import('./components/Pages/Stats'),
-  loading: Loading
-});
 
 class App extends Component {
   render() {
@@ -41,7 +37,6 @@ class App extends Component {
           <Route exact path="/" component={LoadableCategories} />
           <Route exact path="/course" component={LoadableCourses} />
           <Route exact path="/about" component={LoadableAbout} />
-          <Route exact path="/stats" component={LoadableStats} />
           <Route exact path="/404" component={Loadable404} />
         </Switch>
   

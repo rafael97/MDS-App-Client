@@ -38,11 +38,8 @@ class Header extends Component {
           <IndexLinkContainer to='/course'>
             <NavItem eventKey={2} >COURSE</NavItem>
           </IndexLinkContainer>
-          <IndexLinkContainer to='/stats'>
-            <NavItem eventKey={3} >STATS</NavItem>
-          </IndexLinkContainer>
           <IndexLinkContainer to='/about'>
-            <NavItem eventKey={4} >ABOUT</NavItem>
+            <NavItem eventKey={3} >ABOUT</NavItem>
           </IndexLinkContainer>
         </PageHeader.Nav>
         </div>

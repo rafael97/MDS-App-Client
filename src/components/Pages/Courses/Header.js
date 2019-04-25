@@ -5,7 +5,8 @@ import React from 'react'
 const Header = (props) => {
     return (
         <div>
-            <h2>{props.course.name}</h2>
+            <h1>{props.course.fullname}</h1>
+            <h3>{props.course.shortname}</h3>
         </div>
     )
 }
