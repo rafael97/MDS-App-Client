@@ -47,12 +47,11 @@ class Courses extends Component {
     }
 
     render() {
-        return (
-            <Grid >
+        return (<Grid>
                 <Header course ={this.state.CourseDetail} />
                 <Detail course ={this.state.CourseDetail} />
                 <Charts course ={this.state.CourseDetail} />
-            </Grid>
+                </Grid>
         );
     }
 }

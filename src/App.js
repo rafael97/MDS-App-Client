@@ -33,6 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        
         <Switch>
           <Route exact path="/" component={LoadableCategories} />
           <Route exact path="/course" component={LoadableCourses} />

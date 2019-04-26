@@ -25,7 +25,8 @@ const data = (organized)=>{
       data:valuesX
     }
   ]
-};
+
+}
 }
 
 
@@ -34,8 +35,8 @@ const data = (organized)=>{
 const ChartModule = (props) => {
 
     return (
-      <div>
-        <HorizontalBar data={data(props.course.organized)} />
+      <div >
+        <HorizontalBar data={data(props.course.organized)}   />
       </div>
     );
     
