@@ -11,17 +11,14 @@ const data = (courses)=>{
     let {organized} = course
     for (var key in organized) {
       let index =valuesY.findIndex(element => element === key)
-      if (index) {
+      if (index >= 0 ) {
         valuesX[index] =  valuesX[index] + organized[key].length
       }else{
         valuesY.push(key);
         valuesX.push(organized[key].length)
       }
 
-    }
-  
- 
-     
+    }}
   return{
   labels: valuesY,
   datasets: [
@@ -43,11 +40,9 @@ const data = (courses)=>{
 
 
 const ChartModule = (props) => {
-console.log('ChartModule',props.courses);
-
     return (
       <div >
-        {/* <HorizontalBar data={data(props.course.organized)}   /> */}
+        <HorizontalBar data={data(props.courses)}   />
       </div>
     );
     
