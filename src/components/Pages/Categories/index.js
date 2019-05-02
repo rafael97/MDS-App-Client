@@ -3,6 +3,7 @@ import request from '../../../utils/requets';
 import SearchForm from 'emerald-ui/lib/SearchForm';
 import Grid from 'react-bootstrap/lib/Grid'
 import CategoryTable from './CategoryTable'
+import Chart from './Chars'
 import CourseTable from '../../Commons/CourseTable'
 import './css/Categories.css'
 import { Spinner, Button } from 'emerald-ui';
@@ -130,10 +131,12 @@ class Categories extends Component {
                     (() => {
 
                         if (this.state.coursesFilter.length > 0 && this.state.loadingResources === false) {
+                            console.log('Courses',this.state.coursesFilter);                            
                             return <Fragment>
                                 <h2>Courses</h2>
                                 <SearchForm className="course-search" inputId="query" clearable onSubmit={e => e.preventDefault()} onChange={this.handlerFilterCourses} />
                                 <CourseTable courses={this.state.coursesFilter} />
+                                <Chart courses={this.state.coursesFilter} />
                             </Fragment>
                         }
 
