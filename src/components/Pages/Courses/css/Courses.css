@@ -6,3 +6,10 @@
 .canvas{
 width: 500px
 }
+
+
+.validation {
+  display: inline-block;
+  width: 290px;
+  margin: 0;
+}
