@@ -7,7 +7,7 @@ import logo from '../assets/images/logo_utb.png';
 import './Header.css';
 
 class Header extends Component {
-  constructor(props){
+  constructor(props) {
     super()
     this.state = {
       activeKey: 1
@@ -15,7 +15,7 @@ class Header extends Component {
     this.handleChangePage = this.handleChangePage.bind(this)
   }
 
-  handleChangePage(selectedKey){
+  handleChangePage(selectedKey) {
     this.setState({
       activeKey: selectedKey
     })
@@ -24,25 +24,25 @@ class Header extends Component {
   render() {
     return (
       <PageHeader>
-         <div className="Logo col-lg-4">
+        <div className="Logo col-lg-4">
           <img src={logo} alt="logo" />
         </div>
         <div className=" title col-lg-8 ">
-        <h1>MDS App</h1>
+          <h1>MDS App</h1>
         </div>
-        <div className="col-lg-8 ">
-        <PageHeader.Nav activeKey={this.state.activeKey} onSelect={this.handleChangePage}>
-        <IndexLinkContainer to='/'>
-            <NavItem eventKey={1} >CATEGORIES</NavItem>
-          </IndexLinkContainer>
-          <IndexLinkContainer to='/course'>
-            <NavItem eventKey={2} >COURSE</NavItem>
-          </IndexLinkContainer>
-          <IndexLinkContainer to='/about'>
-            <NavItem eventKey={3} >ABOUT</NavItem>
-          </IndexLinkContainer>
-        </PageHeader.Nav>
-        </div>
+        {/* <div className="col-lg-8 ">
+          <PageHeader.Nav activeKey={this.state.activeKey} onSelect={this.handleChangePage}>
+            <IndexLinkContainer to='/'>
+              <NavItem eventKey={1} >CATEGORIES</NavItem>
+            </IndexLinkContainer>
+            <IndexLinkContainer to='/course'>
+              <NavItem eventKey={2} >COURSE</NavItem>
+            </IndexLinkContainer>
+            <IndexLinkContainer to='/about'>
+              <NavItem eventKey={3} >ABOUT</NavItem>
+            </IndexLinkContainer>
+          </PageHeader.Nav>
+        </div> */}
       </PageHeader>
     );
   }
