@@ -4,8 +4,15 @@ import Route from 'react-router-dom/Route';
 import Loadable from 'react-loadable';
 import Loading from './components/Commons/Loading';
 import Header from './components/Commons/Header';
+import SearchBar from './components/Commons/SearchBar';
 
 import './App.css'
+import Dashboard from './components/Pages/Dashboard';
+
+const LoadableDashboard = Loadable({
+  loader: () => import('./components/Pages/Dashboard'),
+  loading: Loading
+});
 
 const LoadableCategories = Loadable({
   loader: () => import('./components/Pages/Categories'),
@@ -22,7 +29,7 @@ const LoadableAbout = Loadable({
   loading: Loading
 });
 
-const Loadable404  = Loadable({
+const Loadable404 = Loadable({
   loader: () => import('./components/Pages/404'),
   loading: Loading
 });
@@ -33,14 +40,16 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        
-        <Switch>
-          <Route exact path="/" component={LoadableCategories} />
+        <SearchBar />
+
+        <Dashboard />
+        {/* <Switch>
+          <Route exact path="/" component={LoadableDashboard} />
           <Route exact path="/course" component={LoadableCourses} />
           <Route exact path="/about" component={LoadableAbout} />
           <Route exact path="/404" component={Loadable404} />
-        </Switch>
-  
+        </Switch> */}
+
       </div>
     );
   }

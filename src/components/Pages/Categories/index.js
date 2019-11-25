@@ -1,3 +1,4 @@
+
 import React, { Component, Fragment } from 'react';
 import request from '../../../utils/requets';
 import SearchForm from 'emerald-ui/lib/SearchForm';
@@ -7,7 +8,9 @@ import Chart from './Chars'
 import CourseTable from '../../Commons/CourseTable'
 import './css/Categories.css'
 import { Spinner, Button } from 'emerald-ui';
+require('dotenv').config();
 
+const { URL_API = ' http://localhost:3050/' } = process.env
 
 class Categories extends Component {
     constructor(props) {
@@ -18,7 +21,6 @@ class Categories extends Component {
             categoriesFilter: [],
             loadingResources: true,
 
-
             //Courses details
             coursesFilter: [],
             courses: [],
@@ -28,6 +30,7 @@ class Categories extends Component {
             parent_category_id: undefined
         }
 
+
         this.handlerFilterCategories = this.handlerFilterCategories.bind(this);
         this.handlerFilterCourses = this.handlerFilterCourses.bind(this)
         this.handlerUpdateCategoryByChild = this.handlerUpdateCategoryByChild.bind(this)
@@ -36,12 +39,14 @@ class Categories extends Component {
     }
 
     async componentDidMount() {
+        console.log('process', process.env);
+
         await this.UpdateComponent()
     }
 
     async UpdateComponent() {
         if (this.state.category_id !== 0) {
-            const response = await request.get(`http://192.207.60.187:8000/v1/category/${this.state.category_id}`)
+            const response = await request.get(`${URL_API}category/${this.state.category_id}`)
             const categories = response.data.categories ? response.data.categories : []
             const courses = response.data.courses ? response.data.courses : []
             const parent = response.data.parent !== undefined ? response.data.parent : undefined
@@ -53,9 +58,9 @@ class Categories extends Component {
                 coursesFilter: courses,
                 previous_category_id: parent
             })
-            
+
         } else {
-            const response = await request.get(`http://192.207.60.187:8000/v1/category/${this.state.category_id}/childs`)
+            const response = await request.get(`${URL_API}category/${this.state.category_id}/childs`)
             const parent = response.data.parent ? response.data.parent : undefined
             this.setState({
                 categories: response.data,
@@ -107,7 +112,7 @@ class Categories extends Component {
                         if (this.state.previous_category_id !== undefined && this.state.loadingResources === false) {
                             return <Fragment>
                                 <div className="button-back">
-                                    <Button color="info" onClick={() => {this.handlerUpdateCategoryByChild(this.state.previous_category_id)}}>Back</Button>
+                                    <Button color="info" onClick={() => { this.handlerUpdateCategoryByChild(this.state.previous_category_id) }}>Back</Button>
                                 </div>
 
                             </Fragment>
@@ -131,7 +136,7 @@ class Categories extends Component {
                     (() => {
 
                         if (this.state.coursesFilter.length > 0 && this.state.loadingResources === false) {
-                            console.log('Courses',this.state.coursesFilter);                            
+                            console.log('Courses', this.state.coursesFilter);
                             return <Fragment>
                                 <h2>Courses</h2>
                                 <SearchForm className="course-search" inputId="query" clearable onSubmit={e => e.preventDefault()} onChange={this.handlerFilterCourses} />
