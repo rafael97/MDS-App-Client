@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import SearchForm from 'emerald-ui/lib/SearchForm';
+import Button from 'emerald-ui/lib/Button';
+
 
 
 class SearchBar extends Component {
@@ -22,17 +24,19 @@ class SearchBar extends Component {
 
     }
 
-    handleChangePage(selectedKey) {
-        this.setState({
-            activeKey: selectedKey
-        })
-    }
-
     render() {
         return (
-            <Fragment>
-                <SearchForm className="Student-search" inputId="query" clearable onSubmit={e => e.preventDefault()} onChange={this.handlerSearchStudents} />
-            </Fragment>)
+            <div className="row">
+                <Fragment>
+                    <div className="col-lg-8 ">
+                        <SearchForm className="Student-search" inputId="query" onSubmit={e => e.preventDefault()} onChange={this.handlerSearchStudents} />
+                    </div>
+                    <div className="col-lg-2 ">
+                        <Button color="info" className="submmit-search" onClick={this.handlerSearchStudents} >Buscar</Button>
+                    </div>
+                </Fragment>
+
+            </div>)
     }
 }
 

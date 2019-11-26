@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import request from '../../../utils/requets';
-const { URL_API = ' http://localhost:3050/' } = process.env
+const { REACT_APP_URL_API = ' http://localhost:3050/' } = process.env
 
 
 
@@ -8,35 +8,40 @@ class Dashboard extends Component {
 
     constructor(props) {
         super()
-
+        console.log('this.props.Student');
         this.state = {
-            Student: {},
+            Student: props.Student,
             loadingResources: true
         }
     }
 
+
+
     async componentDidMount() {
-        let studentCode = 0
-        let studentResponse = []
-        if (this.props.location) {
-            console.log(this.props.location.state);
-
-            if (this.props.location.state) {
-                this.setState({
-                    student: this.props.location.state.Student,
-                    loadingResources: false
-                })
-            }
-        }
-
-        // const response = await request.get(`${URL_API}course/${studentCode}`)
-
-
-        // if (!Array.isArray(response.data)) {
-        //     studentResponse = response.data.student;
-        // }
 
     }
+
+
+
+    async    componentWillReceiveProps() {
+        console.log(this.props.Student.code, this.state.Student.code);
+        console.log(this.props.Student.code !== this.state.Student.code);
+
+        if (this.props.Student.code !== this.state.Student.code) {
+            console.log('componentWillReceiveProps');
+            console.log(this.props.Student);
+            this.setState({
+                Student: this.props.Student,
+                loadingResources: false
+            })
+        }
+
+
+
+    }
+
+
+
 
     render() {
         return (

@@ -144,8 +144,6 @@ class Categories extends Component {
                                 <Chart courses={this.state.coursesFilter} />
                             </Fragment>
                         }
-
-
                     })()
                 }
             </Grid>

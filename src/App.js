@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <SearchBar />
+        {/* <SearchBar /> */}
 
         <Dashboard />
         {/* <Switch>
