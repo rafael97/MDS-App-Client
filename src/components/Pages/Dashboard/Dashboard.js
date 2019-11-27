@@ -1,55 +1,66 @@
 import React, { Component } from 'react';
-import request from '../../../utils/requets';
-const { REACT_APP_URL_API = ' http://localhost:3050/' } = process.env
-
-
+import ChartBar from "./ChartBar";
+import ExpansionPanel from 'emerald-ui/lib/ExpansionPanel';
 
 class Dashboard extends Component {
 
     constructor(props) {
-        super()
-        console.log('this.props.Student');
+        super(props);
+
         this.state = {
-            Student: props.Student,
-            loadingResources: true
-        }
+            options: {
+                chart: {
+                    id: "basic-bar"
+                },
+                xaxis: {
+                    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+                }
+            },
+            series: [
+                {
+                    name: "series-1",
+                    data: [30, 40, 45, 50, 49, 60, 70, 91]
+                }
+            ]
+        };
     }
-
-
-
-    async componentDidMount() {
-
-    }
-
-
-
-    async    componentWillReceiveProps() {
-        console.log(this.props.Student.code, this.state.Student.code);
-        console.log(this.props.Student.code !== this.state.Student.code);
-
-        if (this.props.Student.code !== this.state.Student.code) {
-            console.log('componentWillReceiveProps');
-            console.log(this.props.Student);
-            this.setState({
-                Student: this.props.Student,
-                loadingResources: false
-            })
-        }
-
-
-
-    }
-
-
 
 
     render() {
         return (
             <div className="dashboard">
-                <h1>{`ESTUDIANTE: ${this.state.Student.nombre}`}</h1>
+                {Object.entries(this.props.Student).length > 0 && <div className="body">
+                    <div className="row">
+                        <div className="col-lg-4 ">
+                            <h1>{`ESTUDIANTE: ${this.props.Student.nombre}`}</h1>
+                        </div>
+                        <div className="col-lg-4 ">
+                            <h1>{`${this.props.Student.login_number} Ingresos a SAVIO`}</h1>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <ExpansionPanel>
+                            <ExpansionPanel.Summary>
+                                <p style={{ margin: 0 }}> interaccion en la plataforma     </p>
+                            </ExpansionPanel.Summary>
+                            <ExpansionPanel.Content>
+                                <div className="col-lg-4 ">
+                                    <ChartBar DataSource={this.props.Student.graphs.am_attendees_courses} />
+                                </div>
+                                <div className="col-lg-4 ">
+                                    <ChartBar DataSource={this.props.Student.graphs.am_resources_courses} />
+                                </div>
+                                <div className="col-lg-4 ">
+                                    <ChartBar DataSource={this.props.Student.graphs.am_interaction_resources_courses} />
+                                </div>
+                            </ExpansionPanel.Content>
+                        </ExpansionPanel>
+                    </div>
+                </div>}
             </div>
         );
     }
+
 }
 
 export default Dashboard;
