@@ -4,28 +4,6 @@ import ExpansionPanel from 'emerald-ui/lib/ExpansionPanel';
 
 class Dashboard extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            options: {
-                chart: {
-                    id: "basic-bar"
-                },
-                xaxis: {
-                    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-                }
-            },
-            series: [
-                {
-                    name: "series-1",
-                    data: [30, 40, 45, 50, 49, 60, 70, 91]
-                }
-            ]
-        };
-    }
-
-
     render() {
         return (
             <div className="dashboard">
@@ -34,12 +12,12 @@ class Dashboard extends Component {
                         <div className="col-lg-4 ">
                             <h1>{`ESTUDIANTE: ${this.props.Student.nombre}`}</h1>
                         </div>
-                        <div className="col-lg-4 ">
+                        <div className="col-lg-3 label-ingresos">
                             <h1>{`${this.props.Student.login_number} Ingresos a SAVIO`}</h1>
                         </div>
                     </div>
                     <div className="row">
-                        <ExpansionPanel>
+                        <ExpansionPanel className="expansionPanel" >
                             <ExpansionPanel.Summary>
                                 <p style={{ margin: 0 }}> interaccion en la plataforma     </p>
                             </ExpansionPanel.Summary>

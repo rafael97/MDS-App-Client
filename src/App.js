@@ -14,21 +14,6 @@ const LoadableDashboard = Loadable({
   loading: Loading
 });
 
-const LoadableCategories = Loadable({
-  loader: () => import('./components/Pages/Categories'),
-  loading: Loading
-});
-
-const LoadableCourses = Loadable({
-  loader: () => import('./components/Pages/Courses'),
-  loading: Loading
-});
-
-const LoadableAbout = Loadable({
-  loader: () => import('./components/Pages/About'),
-  loading: Loading
-});
-
 const Loadable404 = Loadable({
   loader: () => import('./components/Pages/404'),
   loading: Loading

@@ -4,6 +4,8 @@ import Dashboard from './Dashboard'
 import Button from 'emerald-ui/lib/Button';
 import Toolbar from 'emerald-ui/lib/Toolbar';
 import request from '../../../utils/requets';
+
+import './css/dashboard.css';
 const { URL_API = ' http://localhost:3050/' } = process.env
 
 
@@ -54,9 +56,9 @@ class Body extends Component {
 
   render() {
     return (
-      <div className="dashboard">
+      <div className="body-dashboard">
         <div className="row">
-          <div className="col-lg-4 ">
+          <div className="col-lg-4">
             <Toolbar>
               <SearchForm className="Student-search" inputId="query" value={this.state.studentCode} clearable onChange={(event) => this.updateStudentCode(event)} />
               <Button color="info" className="submmit-search" onClick={this.handlerSearchStudents} >Buscar</Button>

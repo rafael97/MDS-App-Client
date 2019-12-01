@@ -1,7 +1,28 @@
-.course-search{
-  margin-top: 20px ;
-  margin-bottom: 50px
+.body-dashboard{
+ width: 100%;
+ margin-left: 2%;
+ margin-right: 2%;
 }
+.expansion-panel{
+  width: 90%;
+ margin-left: 4%;
+ }
+
+ .expansion-panel.expanded.grow-horizontally {
+  width: 96%;
+  left: -3%;
+}
+
+.label-ingresos{
+  float: right
+  
+ }
+
+ .label-searck{
+  float: right
+  
+ }
+
 
 .canvas{
 width: 500px
