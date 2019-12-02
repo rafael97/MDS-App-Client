@@ -1,8 +1,19 @@
-.eui-page-header{
+.eui-page-header {
   background-color: #222 !important;
 }
 
-.Logo img{
+.principal-header .container {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 98%;
+}
+
+.title h1 {
+  text-align: center;
+}
+
+.Logo img {
   height: 110x;
-  width : 255px;
+  width: 255px;
+  float: left;
 }

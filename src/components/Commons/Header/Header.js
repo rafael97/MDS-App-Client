@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PageHeader from 'emerald-ui/lib/PageHeader';
-import NavItem from 'react-bootstrap/lib/NavItem';
-import { IndexLinkContainer } from 'react-router-bootstrap'
 import logo from '../assets/images/logo_utb.png';
 
 import './Header.css';
@@ -23,26 +21,13 @@ class Header extends Component {
 
   render() {
     return (
-      <PageHeader>
-        <div className="Logo col-lg-4">
+      <PageHeader className="principal-header" >
+        <div className="Logo col-lg-10">
           <img src={logo} alt="logo" />
         </div>
-        <div className=" title col-lg-8 ">
+        <div className=" title col-lg-2 ">
           <h1>MDS App</h1>
         </div>
-        {/* <div className="col-lg-8 ">
-          <PageHeader.Nav activeKey={this.state.activeKey} onSelect={this.handleChangePage}>
-            <IndexLinkContainer to='/'>
-              <NavItem eventKey={1} >CATEGORIES</NavItem>
-            </IndexLinkContainer>
-            <IndexLinkContainer to='/course'>
-              <NavItem eventKey={2} >COURSE</NavItem>
-            </IndexLinkContainer>
-            <IndexLinkContainer to='/about'>
-              <NavItem eventKey={3} >ABOUT</NavItem>
-            </IndexLinkContainer>
-          </PageHeader.Nav>
-        </div> */}
       </PageHeader>
     );
   }

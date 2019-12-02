@@ -1,33 +1,42 @@
-.body-dashboard{
- width: 100%;
- margin-left: 2%;
- margin-right: 2%;
-}
-.expansion-panel{
-  width: 90%;
- margin-left: 4%;
- }
-
- .expansion-panel.expanded.grow-horizontally {
+.body-dashboard {
   width: 96%;
-  left: -3%;
-}
-
-.label-ingresos{
-  float: right
-  
- }
-
- .student-search{
-  float: right;
+  margin-left: 2%;
   margin-right: 2%;
- }
-
-
-.canvas{
-width: 500px
+}
+.expansion-panel {
+  width: 90%;
+  margin-left: 4%;
 }
 
+.info-panel {
+  width: 90%;
+  margin-left: 4%;
+  margin-bottom: 2%;
+}
+
+.expansion-panel.expanded.grow-horizontally {
+  width: 96%;
+  left: -2%;
+}
+
+.label-ingresos {
+  float: right;
+  padding: 0;
+  text-align: right;
+}
+
+.label-estudiante {
+  padding: 0;
+}
+
+.student-search {
+  float: right;
+  margin: auto;
+}
+
+.canvas {
+  width: 500px;
+}
 
 .validation {
   display: inline-block;

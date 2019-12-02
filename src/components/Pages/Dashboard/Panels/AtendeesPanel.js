@@ -7,7 +7,7 @@ class AtendeesPanel extends Component {
     render() {
         return (
             <div className="row">
-                <ExpansionPanel className="expansionPanel" >
+                <ExpansionPanel className="expansionPanel"  >
                     <ExpansionPanel.Summary>
                         <p style={{ margin: 0 }}> interaccion en la plataforma     </p>
                     </ExpansionPanel.Summary>

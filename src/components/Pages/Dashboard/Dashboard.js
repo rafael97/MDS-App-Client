@@ -9,12 +9,14 @@ class Dashboard extends Component {
         return (
             <div className="dashboard">
                 {Object.entries(this.props.Student).length > 0 && <div className="body">
-                    <div className="row">
-                        <div className="col-xs-6 ">
-                            <h1>{`ESTUDIANTE: ${this.props.Student.nombre}`}</h1>
-                        </div>
-                        <div className="col-lg-3 label-ingresos">
-                            <h1>{`${this.props.Student.login_number} Ingresos a SAVIO`}</h1>
+                    <div className="info-panel">
+                        <div className="row">
+                            <div className="col-lg-6 label-estudiante">
+                                <h1>{`ESTUDIANTE: ${this.props.Student.nombre}`}</h1>
+                            </div>
+                            <div className="col-lg-3 label-ingresos">
+                                <h1>{`${this.props.Student.login_number} Ingresos a SAVIO`}</h1>
+                            </div>
                         </div>
                     </div>
                     <AtendeesPanel graphs={this.props.Student.graphs} />

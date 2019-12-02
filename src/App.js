@@ -25,15 +25,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {/* <SearchBar /> */}
 
         <Dashboard />
-        {/* <Switch>
-          <Route exact path="/" component={LoadableDashboard} />
-          <Route exact path="/course" component={LoadableCourses} />
-          <Route exact path="/about" component={LoadableAbout} />
-          <Route exact path="/404" component={Loadable404} />
-        </Switch> */}
+
 
       </div>
     );

@@ -69,7 +69,7 @@ class Body extends Component {
     return (
       <div className="body-dashboard">
         <div className="row">
-          <div className="col-lg-4 student-search">
+          <div className="col-lg-12 student-search">
             <Toolbar>
               <SearchForm className="" inputId="query" value={this.state.studentCode} clearable onChange={(event) => this.updateStudentCode(event)} />
               <Button color="info" className="submmit-search" onClick={this.handlerSearchStudents} >Buscar</Button>
