@@ -26,24 +26,35 @@ class Body extends Component {
     // const response = await request.get(`${URL_API}course/${CourseId}`)
     await this.setState({
       studentData: {
-        "nombre": "Rafael",
+        "nombre": "Rafael Rocha Barrios",
         code: this.state.studentCode,
-        login_number: 5,
+        login_number: 57,
         graphs: {
           am_attendees_courses: {
+            seriesName: "Cursos-visitados",
             title: "Visitas por curso",
             yAxis: [30, 40, 45, 50, 49, 60, 70, 91],
             xAxis: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
           },
           am_resources_courses: {
+            seriesName: "Recursos",
             title: "Recursos por curso",
             yAxis: [30, 40, 45, 50, 49, 60, 70, 91],
             xAxis: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
           },
           am_interaction_resources_courses: {
+            seriesName: "Recursos revisados",
             title: "Interacción de recurso por cursos",
             yAxis: [30, 40, 45, 50, 49, 60, 70, 91],
             xAxis: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+          },
+          am_login_by_week: {
+            seriesName: "Ingresos a savio",
+            title: "Ingresos por semanas",
+            yAxis: [2, 4, 10, 0, 7, 15, 1, 2, 3, 6, 7, 8, 9, 1, 4, 6],
+            xAxis: ["Semana 1", "Semana 2", "Semana 3", "Semana 4", "Semana 5", "Semana 6",
+              "Semana 7", "Semana 8", "Semana 9", "Semana 10", "Semana 11", "Semana 12", "Semana 13",
+              "Semana 14", "Semana 15", "Semana 16"]
           }
         }
       }
@@ -58,14 +69,16 @@ class Body extends Component {
     return (
       <div className="body-dashboard">
         <div className="row">
-          <div className="col-lg-4">
+          <div className="col-lg-4 student-search">
             <Toolbar>
-              <SearchForm className="Student-search" inputId="query" value={this.state.studentCode} clearable onChange={(event) => this.updateStudentCode(event)} />
+              <SearchForm className="" inputId="query" value={this.state.studentCode} clearable onChange={(event) => this.updateStudentCode(event)} />
               <Button color="info" className="submmit-search" onClick={this.handlerSearchStudents} >Buscar</Button>
             </Toolbar>
           </div>
         </div>
-        < Dashboard Student={this.state.studentData} />
+        <div className="row">
+          < Dashboard Student={this.state.studentData} />
+        </div>
       </div>
     )
 

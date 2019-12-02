@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ChartBar from "./ChartBar";
-import ExpansionPanel from 'emerald-ui/lib/ExpansionPanel';
+import AtendeesPanel from "./Panels/AtendeesPanel";
+import CompliancePanel from "./Panels/CompliancePanel";
+import WeekPanel from "./Panels/WeekPanel";
 
 class Dashboard extends Component {
 
@@ -9,36 +10,20 @@ class Dashboard extends Component {
             <div className="dashboard">
                 {Object.entries(this.props.Student).length > 0 && <div className="body">
                     <div className="row">
-                        <div className="col-lg-4 ">
+                        <div className="col-xs-6 ">
                             <h1>{`ESTUDIANTE: ${this.props.Student.nombre}`}</h1>
                         </div>
                         <div className="col-lg-3 label-ingresos">
                             <h1>{`${this.props.Student.login_number} Ingresos a SAVIO`}</h1>
                         </div>
                     </div>
-                    <div className="row">
-                        <ExpansionPanel className="expansionPanel" >
-                            <ExpansionPanel.Summary>
-                                <p style={{ margin: 0 }}> interaccion en la plataforma     </p>
-                            </ExpansionPanel.Summary>
-                            <ExpansionPanel.Content>
-                                <div className="col-lg-4 ">
-                                    <ChartBar DataSource={this.props.Student.graphs.am_attendees_courses} />
-                                </div>
-                                <div className="col-lg-4 ">
-                                    <ChartBar DataSource={this.props.Student.graphs.am_resources_courses} />
-                                </div>
-                                <div className="col-lg-4 ">
-                                    <ChartBar DataSource={this.props.Student.graphs.am_interaction_resources_courses} />
-                                </div>
-                            </ExpansionPanel.Content>
-                        </ExpansionPanel>
-                    </div>
+                    <AtendeesPanel graphs={this.props.Student.graphs} />
+                    <CompliancePanel graphs={this.props.Student.graphs} />
+                    <WeekPanel graphs={this.props.Student.graphs} />
                 </div>}
             </div>
         );
     }
-
 }
 
 export default Dashboard;

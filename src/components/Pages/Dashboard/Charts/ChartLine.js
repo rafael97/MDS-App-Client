@@ -26,7 +26,7 @@ class chartBar extends Component {
             },
             series: [
                 {
-                    name: "series-1",
+                    name: DataSource.seriesName,
                     data: DataSource.yAxis
                 }
             ]
@@ -41,8 +41,8 @@ class chartBar extends Component {
                         <Chart
                             options={this.state.options}
                             series={this.state.series}
-                            type="bar"
-                            width="450"
+                            type="line"
+                            width="600"
                         />
                     </div>
                 </div>
