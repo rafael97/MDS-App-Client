@@ -8,6 +8,11 @@
   margin-left: 4%;
 }
 
+.label-const {
+  font-weight: 200;
+  font-size: 25px;
+}
+
 .info-panel {
   width: 90%;
   margin-left: 4%;

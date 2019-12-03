@@ -9,7 +9,7 @@ class AtendeesPanel extends Component {
             <div className="row">
                 <ExpansionPanel className="expansionPanel"  >
                     <ExpansionPanel.Summary>
-                        <p style={{ margin: 0 }}> interaccion en la plataforma     </p>
+                        <p style={{ margin: 0 }}> Interaccion en la plataforma     </p>
                     </ExpansionPanel.Summary>
                     <ExpansionPanel.Content>
                         <div className="col-lg-4 ">

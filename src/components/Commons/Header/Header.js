@@ -22,11 +22,11 @@ class Header extends Component {
   render() {
     return (
       <PageHeader className="principal-header" >
-        <div className="Logo col-lg-10">
+        <div className="Logo col-lg-2">
           <img src={logo} alt="logo" />
         </div>
-        <div className=" title col-lg-2 ">
-          <h1>MDS App</h1>
+        <div className=" title col-lg-4 ">
+          <h1>Learning Analitycs en SAVIO</h1>
         </div>
       </PageHeader>
     );

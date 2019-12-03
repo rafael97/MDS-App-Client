@@ -12,10 +12,10 @@ class Dashboard extends Component {
                     <div className="info-panel">
                         <div className="row">
                             <div className="col-lg-6 label-estudiante">
-                                <h1>{`ESTUDIANTE: ${this.props.Student.nombre}`}</h1>
+                                <h1><span className="label-const"> Estudiante: </span><span>{this.props.Student.nombre}</span></h1>
                             </div>
                             <div className="col-lg-3 label-ingresos">
-                                <h1>{`${this.props.Student.login_number} Ingresos a SAVIO`}</h1>
+                                <h1><span>{this.props.Student.login_number}</span><span className="label-const"> Ingresos a SAVIO</span></h1>
                             </div>
                         </div>
                     </div>

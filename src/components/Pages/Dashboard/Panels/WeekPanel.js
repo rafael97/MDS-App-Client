@@ -9,7 +9,7 @@ class WeekPanel extends Component {
             <div className="row">
                 <ExpansionPanel className="expansionPanel" >
                     <ExpansionPanel.Summary>
-                        <p style={{ margin: 0 }}> ingreso por semana en la plataforma     </p>
+                        <p style={{ margin: 0 }}> Ingreso por semana en la plataforma     </p>
                     </ExpansionPanel.Summary>
                     <ExpansionPanel.Content>
 

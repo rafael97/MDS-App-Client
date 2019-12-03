@@ -1,15 +1,18 @@
 .eui-page-header {
-  background-color: #222 !important;
+  background-color: rgba(0, 0, 0, 0.068) !important;
 }
 
 .principal-header .container {
   margin-left: 20px;
   margin-right: 20px;
   width: 98%;
+  margin-bottom: 1%;
 }
 
 .title h1 {
   text-align: center;
+  color: rgba(4, 26, 124, 0.774);
+  font-weight: 500;
 }
 
 .Logo img {
