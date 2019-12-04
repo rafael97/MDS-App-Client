@@ -1,0 +1,50 @@
+.body-dashboard {
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.expansion-panel {
+  width: 90%;
+  margin-left: 4%;
+}
+
+.label-const {
+  font-weight: 200;
+  font-size: 25px;
+}
+
+.info-panel {
+  width: 90%;
+  margin-left: 4%;
+  margin-bottom: 2%;
+}
+
+.expansion-panel.expanded.grow-horizontally {
+  width: 96%;
+  left: -2%;
+}
+
+.label-ingresos {
+  float: right;
+  padding: 0;
+  text-align: right;
+}
+
+.label-estudiante {
+  padding: 0;
+}
+
+.student-search {
+  float: right;
+  margin: auto;
+}
+
+.canvas {
+  width: 500px;
+}
+
+.validation {
+  display: inline-block;
+  width: 290px;
+  margin: 0;
+}
